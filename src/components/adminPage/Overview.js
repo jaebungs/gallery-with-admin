@@ -41,40 +41,6 @@ const Overview = () => {
 
     }, [actionDone])
     
-    // useEffect(()=>{
-    //     // after uploadForm, update product order
-    //     // Watned addFireStore to do heavy works, but it slows down.
-    //     let allIds = [];
-    //     let allDocs = [];
-    //     fireStoreRef.get().then((documents)=>{
-    //         documents.forEach((doc)=>{
-    //             allIds.push(doc.id)
-    //             allDocs.push(doc.data())
-    //         })
-    //         setImageDocs([...allDocs])
-    //     }).then(()=>{
-    //         fireStoreOrderRef.doc('order').get().then((document)=>{
-    //             if (document.data().orderIds){
-    //                 let newOrderIds = [...document.data().orderIds]
-    //                 allIds.forEach((id)=>{
-    //                     if(!newOrderIds.includes(id)){
-    //                         newOrderIds.push(id)
-    //                     }
-    //                 })
-    //                 fireStoreOrderRef.doc('order').update({orderIds: [...newOrderIds]})
-    //                 setImageOrder([...newOrderIds])
-
-    //             } else {
-    //                 fireStoreOrderRef.doc('order').update({orderIds: []});
-    //             }
-    //         }).then(()=>{
-    //             setActionDone(false)
-    //             console.log('Overview effect')
-    //         })
-    //     })
-
-    // }, [actionDone])
-
     return (
         <div>
             <UploadForm

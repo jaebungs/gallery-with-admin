@@ -6,15 +6,16 @@ import AdminCard from './AdminCard';
 
 const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => {
     
-    const [orderedDocs, setOrderedDocs] = useState([]); //array with objects of files
-    const [docOrderIds, setDocOrderIds] = useState([]); //array with order ids.
     const [tractChecked, setTrackChecked] = useState({}); //Track checkbox object with true/false
-    const [deleteDone, setDeleteDone] = useState(false)
     const [dragging, setDragging]=useState(false);
     const [isDragable, setIsDragable] = useState(true);
 
+    const dragItem = useRef();
+    const dragNode = useRef();
+
     let trackCheckedObj = {}
 
+    // create trackChecked obj that has name:{id, name, checked}
     useEffect(() => {
         imageOrder.forEach((id)=>{
             imageDocs && imageDocs.map((doc)=>{
@@ -27,8 +28,8 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
 
     }, [imageOrder, imageDocs])
 
+    // find checked element in tractChecked hook and erase.
     const handleMultipleDelete =() => {
-        // find checked element in tractChecked hook and erase.
         let promises = [];
         let newImageDocs = [...imageDocs];
         let newImageOrder = [...imageOrder];
@@ -50,7 +51,34 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
             setImageDocs(newImageDocs)
             setImageOrder(newImageOrder)
         })
-        
+    }
+
+    // drag functions
+    const handleDragStart = (e, index) => {
+        dragItem.current = index
+        dragNode.current = e.target
+        dragNode.current.addEventListener('dragend', handleDragEnd)
+        console.log('drag start')
+        setDragging(true)
+    }
+    
+    const handleDragEnd = () => {
+        dragItem.current = null;
+        dragNode.current.removeEventListener('dragend', handleDragEnd)
+        dragNode.current = null;
+        setDragging(false)
+    }
+
+    const handleDragEnter = (e) => {
+
+    }
+
+    // Dragging element styling.
+    const setDragStyle = (index) => {
+        if (index === dragItem.current){
+            return "current-drag"
+        }
+        return "adminCard-drag-container"
     }
 
     return (
@@ -64,16 +92,21 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
                 {
                     imageDocs && imageDocs.map((doc, index) => {
                         return (
-                            <div key={index}>
+                            <div 
+                                key={index}
+                                draggable={isDragable ?  "true" : "false" }
+                                onDragStart={(e)=>handleDragStart(e, index)}
+                                className={dragging ? setDragStyle(index) : "adminCard-drag-container"}
+                            >
                                 <AdminCard
                                     tractChecked={tractChecked}
                                     setTrackChecked={setTrackChecked}
-                                    index={index} 
-                                    {...doc}
-                                    setDeleteDone={setDeleteDone}
                                     setImageDocs={setImageDocs}
                                     imageOrder={imageOrder}
                                     setImageOrder={setImageOrder}
+                                    setIsDragable={setIsDragable}
+                                    index={index} 
+                                    {...doc}
                                 />
                             </div>
                             )

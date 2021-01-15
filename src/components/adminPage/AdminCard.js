@@ -1,7 +1,10 @@
 import React from 'react';
 import deleteFireStore from '../../hooks/deleteFireStore';
 
-const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setImageDocs, imageOrder, setImageOrder}) => {
+const AdminCard = ({
+    index, url, name, id, tractChecked, setTrackChecked, 
+    setImageDocs, imageOrder, setImageOrder, setIsDragable
+    }) => {
 
     const handleCheckboxOnChange = (e) => {
         const name = e.target.value;
@@ -52,11 +55,22 @@ const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setImag
                 onChange={handleCheckboxOnChange}
             />
             </label>
-            <p className="text">
+            <p className="text"
+                onMouseEnter={()=>setIsDragable(true)}
+                onMouseLeave={()=>setIsDragable(false)}
+            >
                 {index + 1}
             </p>
-            <img src={url} alt='product image' className="admin-product-image" />
-            <p className="text">
+            <img 
+                src={url} 
+                alt='product image' 
+                className="admin-product-image" 
+            />
+            <p 
+                className="text"
+                onMouseEnter={()=>setIsDragable(true)}
+                onMouseLeave={()=>setIsDragable(false)}
+            >
                 Product: {name}
             </p>
             <button id={id} value={name} onClick={handleDelete}>Delete</button>
