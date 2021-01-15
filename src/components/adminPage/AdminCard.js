@@ -64,7 +64,9 @@ const AdminCard = ({
             <img 
                 src={url} 
                 alt='product image' 
-                className="admin-product-image" 
+                className="admin-product-image"
+                onMouseEnter={()=>setIsDragable(true)}
+                onMouseLeave={()=>setIsDragable(false)}
             />
             <p 
                 className="text"

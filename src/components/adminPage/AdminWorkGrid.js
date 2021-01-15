@@ -25,8 +25,7 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
             })
         })
         setTrackChecked(trackCheckedObj)
-
-    }, [imageOrder, imageDocs])
+    }, [imageDocs])
 
     // find checked element in tractChecked hook and erase.
     const handleMultipleDelete =() => {
@@ -66,11 +65,27 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
         dragItem.current = null;
         dragNode.current.removeEventListener('dragend', handleDragEnd)
         dragNode.current = null;
+        fireStoreOrderRef.doc('order').update({orderIds: [...imageOrder]})
+        console.log(imageOrder)
         setDragging(false)
     }
 
-    const handleDragEnter = (e) => {
-
+    const handleDragEnter = (e, index) => {
+        const currentItem = dragItem.current
+        if (dragNode.current !== e.target){
+            setImageOrder((prev)=>{
+                let newOrder = [...prev];
+                newOrder.splice(index, 0, newOrder.splice(currentItem, 1)[0])
+                dragItem.current = index
+                return newOrder
+            })
+            setImageDocs((prev)=>{
+                let newOrderDocs = [...prev];
+                newOrderDocs.splice(index, 0, newOrderDocs.splice(currentItem, 1)[0])
+                dragItem.current = index
+                return newOrderDocs
+            })
+        }
     }
 
     // Dragging element styling.
@@ -96,6 +111,7 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
                                 key={index}
                                 draggable={isDragable ?  "true" : "false" }
                                 onDragStart={(e)=>handleDragStart(e, index)}
+                                onDragEnter={(e)=>handleDragEnter(e, index)}
                                 className={dragging ? setDragStyle(index) : "adminCard-drag-container"}
                             >
                                 <AdminCard
