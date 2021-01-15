@@ -18,12 +18,14 @@ const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setDele
             })
         }
     }
-    async function handleDelete(e) {
+    
+    const handleDelete = (e) => {
         const id = e.target.id;
         const name = e.target.value;
 
         deleteFireStore(id, name);
-        await setDeleteDone(true);
+        setDeleteDone(true);
+
     }
 
     return (

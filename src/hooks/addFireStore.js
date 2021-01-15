@@ -1,23 +1,24 @@
-import { storageRef, fireStoreRef, timeStamp } from '../firebase/firebase';
+import { storageRef, fireStoreRef, fireStoreOrderRef, timeStamp } from '../firebase/firebase';
 
 const addFireStore = (imageData) => {
+    const reference = fireStoreRef.doc();
+    const id = reference.id
+    const name = imageData.name;
+    const type = imageData.type;
 
-    const delay = () => {
-        setTimeout((resolve) => {
-            resolve
-        }, 400);
-    }
-
-    storageRef.child(imageData.name).put(imageData).on('state_changed', (snap)=>{
-        // let progress = (snap.bytesTransferred / snap.totalBytes) * 100;
-    }, (err) =>{
-        console.log('Storage upload fail', err)
-    }, async ()=>{
-        const url = await storageRef.child(imageData.name).getDownloadURL();
-        const reference = fireStoreRef.doc();
-        const refId = reference.id
-        delay()
-        reference.set({url, createdAt: timeStamp(), name: imageData.name, type: imageData.type, id: refId })
+    // ahhhh sigh finally return with url value!
+    return new Promise ((resolve) => {
+        storageRef.child(imageData.name).put(imageData).on('state_changed', (snap)=>{
+            // let progress = (snap.bytesTransferred / snap.totalBytes) * 100;
+        }, (err) =>{
+            console.log('Storage upload fail', err)
+        }, async ()=>{
+            const url = await storageRef.child(imageData.name).getDownloadURL();
+    
+            reference.set({ url, createdAt: timeStamp(), name, type, id })
+    
+            resolve({ url, id, name, type })
+        })    
     })
 }
 

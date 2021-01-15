@@ -10,6 +10,7 @@ const deleteFireStore =  (id, name) => {
         let index = newOrderIds.indexOf(id);
 
         newOrderIds.splice(index, 1);
+        
         fireStoreOrderRef.doc('order').update({orderIds: [...newOrderIds]})
     })
 }

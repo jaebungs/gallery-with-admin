@@ -38,7 +38,7 @@ const useOrderFireStore = () => {
 
     }, [])
 
-    return { orderDocs };
+    return { orderDocs, orderIds };
 
 }
 
