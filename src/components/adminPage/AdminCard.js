@@ -1,7 +1,7 @@
 import React from 'react';
 import deleteFireStore from '../../hooks/deleteFireStore';
 
-const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setDeleteDone}) => {
+const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setImageDocs, setImageOrder}) => {
 
     const handleCheckboxOnChange = (e) => {
         const name = e.target.value;
@@ -24,8 +24,19 @@ const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setDele
         const name = e.target.value;
 
         deleteFireStore(id, name);
-        setDeleteDone(true);
+        setImageDocs((prev) => {
+            const index = prev.findIndex((doc)=> doc.id === id)
+            prev.splice(index, 1)
+            
+            return [...prev]
+        })
+        
+        setImageOrder((prev)=>{
+            const index = prev.findIndex((str)=> str === id)
+            prev.splice(index, 1)
 
+            return [...prev]
+        })
     }
 
     return (

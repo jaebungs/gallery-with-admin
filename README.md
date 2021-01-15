@@ -12,3 +12,7 @@ All function should reflect to the page immediately.
 Need one state? ref? to handle all and update at one parent component.  
 
 overView should be the parents.
+
+### Learning outcome  
+1. I was not using react state properly... Why did I think I have to get data everytime?  
+I just had to update state and make sure firebase is updated. => reduced code.

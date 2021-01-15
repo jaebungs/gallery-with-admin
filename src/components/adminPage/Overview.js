@@ -81,17 +81,17 @@ const Overview = () => {
                 imageDocs={imageDocs}
                 imageOrder={imageOrder}
 
+                setImageDocs={setImageDocs}
+                setImageOrder={setImageOrder}
                 setActionDone={setActionDone}
+            />
+            <AdminWorkGrid 
+                imageDocs={imageDocs} 
+                imageOrder={imageOrder}
+                
                 setImageDocs={setImageDocs}
                 setImageOrder={setImageOrder}
             />
-            {/* <AdminWorkGrid 
-                imageDocs={imageDocs} 
-                setImageDocs={setImageDocs}
-                imageOrder={imageOrder}
-                setImageOrder={setImageOrder}
-                setActionDone={setActionDone}
-            /> */}
         </div>
     )
 }

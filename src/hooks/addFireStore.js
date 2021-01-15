@@ -17,7 +17,7 @@ const addFireStore = (imageData) => {
     
             reference.set({ url, createdAt: timeStamp(), name, type, id })
     
-            resolve({ url, id, name, type })
+            resolve({ url, id, name, type, createdAt: timeStamp() })
         })    
     })
 }
