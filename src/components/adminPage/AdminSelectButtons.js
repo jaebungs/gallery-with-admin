@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { fireStoreRef, storage } from '../../firebase/firebase';
 
-const AdminSelectButtons = ({tractChecked, setTrackChecked}) => {
+const AdminSelectButtons = ({tractChecked, setTrackChecked, handleMultipleDelete}) => {
     let trackCheckedObj = {};
     
     const handleSelectAll = () => {
         trackCheckedObj = {...tractChecked}
         for (const item in trackCheckedObj){
-            trackCheckedObj[item] = true
+            trackCheckedObj[item].checked = true
         }
         setTrackChecked(trackCheckedObj)
     }
@@ -15,15 +15,10 @@ const AdminSelectButtons = ({tractChecked, setTrackChecked}) => {
     const handleSelectNone =() => {
         trackCheckedObj = {...tractChecked}
         for (const item in trackCheckedObj){
-            trackCheckedObj[item] = false
+            trackCheckedObj[item].checked = false
         }
         setTrackChecked(trackCheckedObj)
     }
-
-    const handleMultipleDelete =() => {
-
-    }
-
 
     return (
         <div className="checkbox-control-container">

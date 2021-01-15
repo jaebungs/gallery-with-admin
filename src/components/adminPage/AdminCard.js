@@ -1,20 +1,23 @@
 import React from 'react';
 import deleteFireStore from '../../hooks/deleteFireStore';
 
-const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setImageDocs, setImageOrder}) => {
+const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setImageDocs, imageOrder, setImageOrder}) => {
 
     const handleCheckboxOnChange = (e) => {
         const name = e.target.value;
 
         if (e.target.checked) {
-            setTrackChecked({
-                ...tractChecked,
-               [name] : true
+            setTrackChecked((prev)=>{
+                let newTrackChecked = {...prev}
+                newTrackChecked[name].checked = true
+               return newTrackChecked
             })
         } else if (!e.target.checked) {
-            setTrackChecked({
-                ...tractChecked,
-               [name] : false
+            setTrackChecked((prev)=>{
+                let newTrackChecked = {...prev}
+                console.log(newTrackChecked)
+                newTrackChecked[name].checked = false
+               return newTrackChecked
             })
         }
     }
@@ -23,11 +26,11 @@ const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setImag
         const id = e.target.id;
         const name = e.target.value;
 
-        deleteFireStore(id, name);
+        deleteFireStore(id, name, imageOrder);
         setImageDocs((prev) => {
             const index = prev.findIndex((doc)=> doc.id === id)
             prev.splice(index, 1)
-            
+
             return [...prev]
         })
         
@@ -45,7 +48,7 @@ const AdminCard = ({index, url, name, id, tractChecked, setTrackChecked, setImag
             <label className="check-box">
                 {/* Checkbox was giving changing an uncontrolled input error due to undefined checked value */}
                 <input type="checkbox" value={name} 
-                checked={tractChecked[name] ? tractChecked[name] : false} 
+                checked={tractChecked[name] ? tractChecked[name].checked : false} 
                 onChange={handleCheckboxOnChange}
             />
             </label>
