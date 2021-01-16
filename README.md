@@ -15,4 +15,6 @@ overView should be the parents.
 
 ### Learning outcome  
 1. I was not using react state properly... Why did I think I have to get data everytime?  
-I just had to update state and make sure firebase is updated. => reduced code.
+I just had to update state and make sure firebase is updated. => reduced code.  
+2. It's my firs time using any kind of authentification system. Learning some security problems such as  
+session , local storage (Cross-Site-Scripting attack), cookies (but not very secure).  

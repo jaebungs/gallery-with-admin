@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const Header = () => {
-
+    
     return(
         <header>
             <h1>CommonGoods Gallery</h1>
@@ -15,13 +15,7 @@ const Header = () => {
             >
                 Home
             </NavLink>
-            <NavLink
-                to='/admin'
-                activeClassName="is-active"
-                className='admin-nav'
-            >
-                Admin
-            </NavLink>
+
         </header>
     )
 }
