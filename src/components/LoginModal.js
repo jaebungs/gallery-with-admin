@@ -1,38 +1,39 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { auth } from '../firebase/firebase';
-import { startLogin } from '../hooks/auth';
+import { useAuth } from '../hooks/auth';
 
 const LoginModal = ({setAdminModal}) => {
     
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const { startLogin } = useAuth();
 
     const history = useHistory();
 
-    const handleClicked = () => {
+    const handleCloseClicked = () => {
         setAdminModal(null);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        auth.signInWithEmailAndPassword(email, password)
-        .then((user) => {
-            console.log(user)
-            console.log(user.token, user.cookies)
-            return history.push("/admin");
-        })
-        .catch((error) => {
-            console.log('error', error)
-        });
-        startLogin(email, password)
+        await startLogin(email, password)
+            .then((user) => {
+                console.log(user)
+                setAdminModal(null);
+                history.push("/admin");
+            })
+            .catch((error) => {
+                console.log('error', error)
+                setAdminModal(null);
+            });
     };
 
     return (
         <div className="backdrop">
             <h3>Admin Login</h3>
-            <div onClick={handleClicked}>X</div>
+            <div onClick={handleCloseClicked}>X</div>
            <form onSubmit={handleSubmit}>
                <label>  
                     <input type="email" placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)} required/>
@@ -42,7 +43,7 @@ const LoginModal = ({setAdminModal}) => {
                </label>
                <button>Sign In</button>
            </form>
-           <button onClick={handleClicked}>Cancel</button>
+           <button onClick={handleCloseClicked}>Cancel</button>
         </div>
     )
 };
