@@ -1,18 +1,27 @@
 .product-container {
-    width: 400px;
-    height: 400px;
+    margin: $s-size;
+
+    .product-image {
+        border-radius: 8px;
+        cursor: pointer;
+        width: 193;
+        height: 289px;
+        margin: $xs-size;
+    }
+
+    .product-image:hover {
+        opacity: 0.7;
+    }
 }
 
-.product-image {
-    width: 300px;
-    height: 300px;
-}
 
 .admin-card {
+    border-bottom: 1px solid #8a8a8a;
     display: grid;
     grid-template-columns: 0.1fr 0.1fr 0.5fr 1fr 0.3fr;
-    width: 80%;
-    margin: 50px auto;
+    width: 60%;
+    margin: $s-size auto;
+    padding: $s-size;
     align-items: center;
     justify-content: center;
 
@@ -20,14 +29,20 @@
         font-size: $m-size;
         padding: $m-size;
     }
-}
 
-.admin-product-image{
-    width: 100px;
-    height: 100px;
+    .admin-product-image{
+        width: 70px;
+        height: 70px;
+    }
 }
 
 .current-drag {
-     background-color: #b3b3b3;
-     opacity: 0.7;
+    background-color: #b3b3b3;
+    opacity: 0.7;
+    height: 90px;
+
+}
+
+.adminCard-drag-container{
+    height: 90px;
 }

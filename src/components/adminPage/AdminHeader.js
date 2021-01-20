@@ -15,24 +15,26 @@ const AdminHeader = () => {
     }
     
     return(
-        <header>
-            <h1>CommonGoods Gallery</h1>
-            <NavLink
-                exact
-                to='/'
-                activeClassName="is-active"
-                className='nav'
-            >
-                Home
-            </NavLink>
-            <NavLink
-                exact
-                to='/admin'
-                activeClassName="is-active"
-                className='nav'
-            >
-                Admin
-            </NavLink>
+        <header className="header-container">
+            <div className="navigation-container">
+                <h1>Common Goods Studio</h1>
+                <NavLink
+                    exact
+                    to='/'
+                    activeClassName="is-active"
+                    className='anchor'
+                >
+                    Home
+                </NavLink>
+                <NavLink
+                    exact
+                    to='/admin'
+                    activeClassName="is-active"
+                    className='anchor'
+                >
+                    Admin
+                </NavLink>
+            </div>
             <button onClick={handleLogout}>Logout</button>
         </header>
     )

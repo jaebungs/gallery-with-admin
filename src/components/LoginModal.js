@@ -32,18 +32,22 @@ const LoginModal = ({setAdminModal}) => {
 
     return (
         <div className="backdrop">
-            <h3>Admin Login</h3>
-            <div onClick={handleCloseClicked}>X</div>
-           <form onSubmit={handleSubmit}>
-               <label>  
-                    <input type="email" placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)} required/>
-               </label>
-               <label>  
-                    <input type="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)} required/>
-               </label>
-               <button>Sign In</button>
-           </form>
-           <button onClick={handleCloseClicked}>Cancel</button>
+            <div className="login-modal-container">
+                <h3>Admin Login</h3>
+                <div className="close-button" onClick={handleCloseClicked}>X</div>
+
+                <form onSubmit={handleSubmit}>
+                    <label>  
+                        <input type="email" placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)} required/>
+                    </label>
+                    <label>
+                        <input type="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)} required/>
+                    </label>
+                    <button>Sign In</button>
+                </form>
+
+                <button onClick={handleCloseClicked}>Cancel</button>
+            </div>
         </div>
     )
 };

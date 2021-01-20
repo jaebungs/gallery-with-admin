@@ -98,12 +98,13 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
 
     return (
         <div id="overview-page">
+            <AdminSelectButtons 
+                tractChecked={tractChecked}
+                setTrackChecked={setTrackChecked}
+                handleMultipleDelete={handleMultipleDelete}
+            />
             <div className="admin-cards-container">
-                <AdminSelectButtons 
-                    tractChecked={tractChecked}
-                    setTrackChecked={setTrackChecked}
-                    handleMultipleDelete={handleMultipleDelete}
-                />
+                
                 {
                     imageDocs && imageDocs.map((doc, index) => {
                         return (

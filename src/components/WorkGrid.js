@@ -7,12 +7,12 @@ const WorkGrid = ({ setSelectedImg }) => {
     const { orderDocs } = useOrderFireStore();
 
     return (
-        <div id="MainPage">
+        <main className="main-container">
             {orderDocs && orderDocs.map((doc, index) => {
                 return <Card key={index} setSelectedImg={setSelectedImg} {...doc} />
                 })
             }
-        </div>
+        </main>
     )
 }
 

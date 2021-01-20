@@ -55,7 +55,7 @@ const AdminCard = ({
                 onChange={handleCheckboxOnChange}
             />
             </label>
-            <p className="text"
+            <p className="text cursor"
                 onMouseEnter={()=>setIsDragable(true)}
                 onMouseLeave={()=>setIsDragable(false)}
             >
@@ -64,16 +64,16 @@ const AdminCard = ({
             <img 
                 src={url} 
                 alt='product image' 
-                className="admin-product-image"
+                className="admin-product-image cursor"
                 onMouseEnter={()=>setIsDragable(true)}
                 onMouseLeave={()=>setIsDragable(false)}
             />
             <p 
-                className="text"
+                className="text cursor"
                 onMouseEnter={()=>setIsDragable(true)}
                 onMouseLeave={()=>setIsDragable(false)}
             >
-                Product: {name}
+                {name}
             </p>
             <button id={id} value={name} onClick={handleDelete}>Delete</button>
             

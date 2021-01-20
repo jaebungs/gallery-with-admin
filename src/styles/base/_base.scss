@@ -1,16 +1,25 @@
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
+    background-color: $background;
 }
 
 button {
+    background-color: none;
+    border: none;
     cursor: pointer;
 }
 
 button:disabled {
     cursor: default;
+}
+
+.cursor {
+    cursor: pointer;
 }

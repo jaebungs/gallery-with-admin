@@ -44,31 +44,6 @@ const UploadForm = ({setActionDone, imageDocs, imageOrder, setImageDocs , setIma
             console.log('upload fail', err)
         })
 
-        // // get all image names(strings) in Storage.
-        // storageRef.listAll().then((result)=> {
-        //     result.items.forEach((item) => {
-        //         storageImages.push(item.name)
-        //     })
-        // }).then(()=>{
-        //     for (const file in filesToUpload){
-        //         if (storageImages.includes(filesToUpload[file].name) === false && allowedType.includes(filesToUpload[file].type)){
-        //             promises.push(addFireStore(filesToUpload[file]));
-        //             storageImages.push(filesToUpload[file].name)
-        //         }
-        //     }
-        // }).then(()=>{
-        //     Promise.all(promises).then(()=>{
-        //         console.log('upload complete')
-        //     }).catch((err)=>{
-        //         console.log('upload fail', err)
-        //     })
-        // }).then(()=>{
-        //     setActionDone(true);
-        // })
-        // .catch((err)=>{
-        //     console.log('upload fail', err)
-        // })
-        
     }
 
 
