@@ -16,12 +16,12 @@
 
 .adminCard-drag-container{
     width: 70%;
-    min-height: 150px;
+    min-height: 100px;
     margin: 0 auto;
 }
 .current-drag{
     width: 70%;
-    min-height: 150px;
+    min-height: 100px;
     margin: 0 auto;
 }
 
@@ -29,8 +29,8 @@
     border-bottom: 1px solid #8a8a8a;
     display: grid;
     grid-template-columns: 0.1fr 0.1fr 0.3fr 1fr 0.3fr;
+    grid-template-rows: 100px;
     max-width: 65%;
-    height: auto;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
@@ -47,6 +47,8 @@
     
     .delete-btn{
         border: $button-border;
+        background-color: $delete-btn;
+        color: #fff;
     }
 }
 
@@ -54,7 +56,6 @@
     background-color: #b3b3b3;
     opacity: 0.7;
     height: 90px;
-
 }
 
 .adminCard-drag-container{

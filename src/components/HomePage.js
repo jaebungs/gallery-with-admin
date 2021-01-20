@@ -30,14 +30,13 @@ const HomePage = () => {
 
     return (
         <div>
-            <span id="top"></span>
             {isLoggedIn ? <AdminHeader /> : <Header /> }
             <WorkGrid setSelectedImg={setSelectedImg} />
             {
                 selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
             }
             {
-                scrollPosition > 200 && <a href="#top" onClick={toTop}><i className="fas fa-arrow-circle-up top-arrow"></i></a>
+                scrollPosition > 200 && <i onClick={toTop} className="fas fa-arrow-circle-up top-arrow"></i>
             }
             <footer className="footer-container">
                 <p>© {year}, Common Goods Studio</p>
