@@ -9,6 +9,7 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
     const [tractChecked, setTrackChecked] = useState({}); //Track checkbox object with true/false
     const [dragging, setDragging]=useState(false);
     const [isDragable, setIsDragable] = useState(true);
+    const [startUpdate, setStartUpdate] = useState(false);
 
     const dragItem = useRef();
     const dragNode = useRef();
@@ -26,6 +27,16 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
         })
         setTrackChecked(trackCheckedObj)
     }, [imageDocs])
+
+    // After dragEnd, update fireStore order
+    useEffect(()=>{
+        if(startUpdate){
+            fireStoreOrderRef.doc('order').update({orderIds: imageOrder})
+            .then(()=>{
+                setStartUpdate(false)
+            })
+        }
+    },[startUpdate])
 
     // find checked element in tractChecked hook and erase.
     const handleMultipleDelete =() => {
@@ -57,7 +68,6 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
         dragItem.current = index
         dragNode.current = e.target
         dragNode.current.addEventListener('dragend', handleDragEnd)
-        console.log('drag start')
         setDragging(true)
     }
     
@@ -65,9 +75,8 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
         dragItem.current = null;
         dragNode.current.removeEventListener('dragend', handleDragEnd)
         dragNode.current = null;
-        fireStoreOrderRef.doc('order').update({orderIds: [...imageOrder]})
-        console.log(imageOrder)
         setDragging(false)
+        setStartUpdate(true)
     }
 
     const handleDragEnter = (e, index) => {

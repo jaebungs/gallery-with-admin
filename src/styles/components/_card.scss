@@ -14,14 +14,26 @@
     }
 }
 
+.adminCard-drag-container{
+    width: 70%;
+    height: 100%;
+    margin: $s-size auto;
+    padding: $s-size;
+}
+.current-drag{
+    width: 70%;
+    height: 100%;
+    margin: $s-size auto;
+    padding: $s-size;
+}
 
 .admin-card {
     border-bottom: 1px solid #8a8a8a;
     display: grid;
-    grid-template-columns: 0.1fr 0.1fr 0.5fr 1fr 0.3fr;
-    width: 60%;
-    margin: $s-size auto;
-    padding: $s-size;
+    grid-template-columns: 0.1fr 0.1fr 0.3fr 1fr 0.3fr;
+    max-width: 65%;
+    height: auto;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
 
