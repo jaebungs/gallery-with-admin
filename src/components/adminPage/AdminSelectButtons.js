@@ -22,9 +22,9 @@ const AdminSelectButtons = ({tractChecked, setTrackChecked, handleMultipleDelete
 
     return (
         <div className="checkbox-control-container">
-            <button onClick={handleSelectAll}>Select All</button>
-            <button onClick={handleSelectNone}>Select None</button>
-            <button onClick={handleMultipleDelete}>Delete</button>
+            <button className="checkbox-select-btn" onClick={handleSelectAll}>Select All</button>
+            <button className="checkbox-select-btn" onClick={handleSelectNone}>Select None</button>
+            <button className="checkbox-select-btn" onClick={handleMultipleDelete}>Delete</button>
         </div>
     )
 }

@@ -16,15 +16,13 @@
 
 .adminCard-drag-container{
     width: 70%;
-    height: 100%;
-    margin: $s-size auto;
-    padding: $s-size;
+    min-height: 150px;
+    margin: 0 auto;
 }
 .current-drag{
     width: 70%;
-    height: 100%;
-    margin: $s-size auto;
-    padding: $s-size;
+    min-height: 150px;
+    margin: 0 auto;
 }
 
 .admin-card {
@@ -45,6 +43,10 @@
     .admin-product-image{
         width: 70px;
         height: 70px;
+    }
+    
+    .delete-btn{
+        border: $button-border;
     }
 }
 

@@ -48,7 +48,7 @@ const UploadForm = ({setActionDone, imageDocs, imageOrder, setImageDocs , setIma
 
 
     return (
-        <form >
+        <form className="add-file-form">
             <input type="file" onChange={handleChange} multiple />
             
             <div className="output">

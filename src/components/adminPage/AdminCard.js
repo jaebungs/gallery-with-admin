@@ -75,7 +75,7 @@ const AdminCard = ({
             >
                 {name}
             </p>
-            <button id={id} value={name} onClick={handleDelete}>Delete</button>
+            <button className="delete-btn" id={id} value={name} onClick={handleDelete}>Delete</button>
             
         </div>
     )
