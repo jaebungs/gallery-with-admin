@@ -36,7 +36,7 @@ const HomePage = () => {
                 selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
             }
             {
-                scrollPosition > 200 && <i onClick={toTop} className="fas fa-arrow-circle-up top-arrow"></i>
+                scrollPosition > 200 && <i onClick={toTop} className="fas fa-arrow-circle-up top-arrow cursor"></i>
             }
             <footer className="footer-container">
                 <p>© {year}, Common Goods Studio</p>

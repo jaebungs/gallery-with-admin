@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { auth } from '../firebase/firebase';
 import { useAuth } from '../hooks/auth';
 
 const LoginModal = ({setAdminModal}) => {

@@ -6,10 +6,8 @@ const addFireStore = (imageData) => {
     const name = imageData.name;
     const type = imageData.type;
 
-    // ahhhh sigh finally return with url value!
     return new Promise ((resolve) => {
         storageRef.child(imageData.name).put(imageData).on('state_changed', (snap)=>{
-            // let progress = (snap.bytesTransferred / snap.totalBytes) * 100;
         }, (err) =>{
             console.log('Storage upload fail', err)
         }, async ()=>{

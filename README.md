@@ -1,3 +1,7 @@
+# Gallery-app  
+Upload file, then you can have your own simple photo gallery.  
+Built with firebase, react, scss, webpack, babel.
+
 #### features  
 [For user side - easy]  
 - get data from firebase -> render cards  
