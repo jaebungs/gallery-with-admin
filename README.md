@@ -1,5 +1,5 @@
 # Gallery-app  
-Upload file, then you can have your own simple photo gallery.  
+Upload file, then you can have your own masonary layout gallery.  
 Built with firebase, react, scss, webpack, babel.
 
 #### features  
@@ -22,3 +22,8 @@ overView should be the parents.
 I just had to update state and make sure firebase is updated. => reduced code.  
 2. It's my firs time using any kind of authentification system. Learning some security problems such as  
 session , local storage (Cross-Site-Scripting attack), cookies (but not very secure).  
+3. Align images while keeping ratio. Flex or grid?  
+Oh... it is actually hard! There are many different ways to achieve this.  
+Note: firefox has grid-template-rows: masonry; feature!
+
+

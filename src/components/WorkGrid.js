@@ -5,13 +5,15 @@ import Card from './Card';
 const WorkGrid = ({ setSelectedImg }) => {
 
     const { orderDocs } = useOrderFireStore();
-
+    
     return (
         <main className="main-container">
-            {orderDocs && orderDocs.map((doc, index) => {
-                return <Card key={index} setSelectedImg={setSelectedImg} {...doc} />
-                })
-            }
+            <div className="cards-container">
+                {orderDocs && orderDocs.map((doc, index) => {
+                    return <Card key={index} setSelectedImg={setSelectedImg} {...doc} />
+                    })
+                }
+            </div>
         </main>
     )
 }

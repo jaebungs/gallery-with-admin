@@ -28,13 +28,18 @@ const useOrderFireStore = () => {
         })
         .then((result) => {
             result.forEach((res) => {
+                // let height = null;
+                // let img = new Image();
+                // img.src = res.data().url;
+                // img.onload = () => height = img.height;
+
                 // each object contains image data.
                 document.push({...res.data(), id: res.id})
+                // console.log(height)
             })
             setOrderDocs(document)
         })
         .catch((err)=>{console.log('failed to get ordered images',err)})
-
 
     }, [])
 
