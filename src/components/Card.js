@@ -11,7 +11,7 @@ const Card = ({setSelectedImg, index, url, id, height, width, name }) => {
     // calculate height and give className that is close to it's ratio.
     const heightCalculator = (height) => {
         let resizeWidth = width / 290
-        let resize = Math.round( (parseInt(height) / resizeWidth)/10 );
+        let resize = Math.round( (parseInt(height) / resizeWidth) / 11 );
         return resize;
     };
 

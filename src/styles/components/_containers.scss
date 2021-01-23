@@ -19,6 +19,21 @@
     }
 }
 
+@media(max-width: 720px){
+    .header-container {
+        display: block;
+        margin: 0 auto;
+        h1{
+            text-align: center;
+        }
+        .anchor{
+            float: right;
+            padding: $s-size;
+            margin: 0;
+        }
+    }
+}
+
 .is-active{
     font-weight: bold;
     border-bottom: 2px solid #000;
@@ -31,6 +46,16 @@
     grid-template-columns: repeat(auto-fill, max(290px));
     grid-auto-rows: 1px;
     margin: $xl-size 14rem;
+    justify-content: center;
+}
+
+@media(max-width: 900px){
+    .cards-container {
+        margin: $xl-size 0;
+    }
+    .top-arrow{
+        left: 93%;
+    }
 }
 
 .footer-container{
@@ -45,7 +70,6 @@
     }
 
     .link-container{
-        position: relative;
         right: 70px;
     }
 
@@ -57,6 +81,14 @@
 
     .media-icon:hover{
         opacity: 0.6;
+    }
+}
+
+@media(max-width: 400px){
+    .link-container {
+        a {
+            display: block;
+        }
     }
 }
 
