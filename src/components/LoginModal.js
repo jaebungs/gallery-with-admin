@@ -42,10 +42,10 @@ const LoginModal = ({setAdminModal}) => {
                     <label>
                         <input type="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)} required/>
                     </label>
-                    <button>Sign In</button>
+                    <button className="primary">Sign In</button>
                 </form>
 
-                <button onClick={handleCloseClicked}>Cancel</button>
+                <button className="danger" onClick={handleCloseClicked}>Cancel</button>
             </div>
         </div>
     )

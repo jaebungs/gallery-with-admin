@@ -33,8 +33,19 @@
     }
 
     button {
-        margin: $xs-size;
+        color: #fff;
+        margin: $xs-size 0;
         padding: $xs-size;
+        border-radius: 10px;
+        width: 300px;
+    }
+
+    .primary {
+        background-color: $primary;
+    }
+
+    .danger {
+        background-color: $danger;
     }
 
     .close-button {
