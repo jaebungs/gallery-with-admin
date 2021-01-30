@@ -33,7 +33,6 @@ const LoginModal = ({setAdminModal}) => {
         <div className="backdrop">
             <div className="login-modal-container">
                 <h3>Admin Login</h3>
-                <div className="close-button" onClick={handleCloseClicked}>X</div>
 
                 <form onSubmit={handleSubmit}>
                     <label>  
@@ -43,9 +42,9 @@ const LoginModal = ({setAdminModal}) => {
                         <input type="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)} required/>
                     </label>
                     <button className="primary">Sign In</button>
+                    <button className="danger" onClick={handleCloseClicked}>Cancel</button>
                 </form>
 
-                <button className="danger" onClick={handleCloseClicked}>Cancel</button>
             </div>
         </div>
     )

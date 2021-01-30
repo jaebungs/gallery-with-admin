@@ -2,5 +2,3 @@
 yarn-error.log
 .env
 .eslintrc.js
-.firebaserc
-firebase.json

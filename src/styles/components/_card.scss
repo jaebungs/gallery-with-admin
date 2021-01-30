@@ -1,8 +1,7 @@
 .card-container {
-
     .card-image {
         border-radius: 8px;
-        max-width: 100%;
+        width: 290px;
         max-height: 100%;
         cursor: pointer;
     }
@@ -12,6 +11,7 @@
     }
 }
 
+// Admin dragable
 .adminCard-drag-container {
     width: 70%;
     min-height: 100px;
