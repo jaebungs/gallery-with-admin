@@ -17,7 +17,7 @@ const AdminHeader = () => {
     return(
         <header className="header-container">
             <div className="navigation-container">
-                <h1>Common Goods Studio</h1>
+                <h1 className="company-title">Common Goods Studio</h1>
                 <NavLink
                     exact
                     to='/'
@@ -35,7 +35,7 @@ const AdminHeader = () => {
                     Admin
                 </NavLink>
             </div>
-            <button onClick={handleLogout}>Logout</button>
+            <button className="logout-button" onClick={handleLogout}>Logout</button>
         </header>
     )
 }

@@ -4,6 +4,11 @@
     align-items: center;
     font-size: $m-size;
     padding: $s-size $xl-size;
+    margin: $s-size 13rem;
+    
+    .company-title {
+        font-size: $l-size;
+    }
 
     .navigation-container {
         display: flex;
@@ -19,17 +24,28 @@
     }
 }
 
-@media(max-width: 720px){
+@media(max-width: 770px){
     .header-container {
         display: block;
         margin: 0 auto;
+
         h1{
             text-align: center;
         }
+
+        .navigation-container {
+            flex-direction: column;
+        }
+
         .anchor{
             float: right;
             padding: $s-size;
             margin: 0;
+        }
+
+        .logout-button{
+            display: block;
+            margin: $s-size auto;
         }
     }
 }
