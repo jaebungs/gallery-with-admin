@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fireStore, fireStoreRef, fireStoreOrderRef } from '../firebase/firebase';
+import { fireStoreRef, fireStoreOrderRef } from '../firebase/firebase';
 
 const useOrderFireStore = () => {
 
@@ -28,14 +28,8 @@ const useOrderFireStore = () => {
         })
         .then((result) => {
             result.forEach((res) => {
-                // let height = null;
-                // let img = new Image();
-                // img.src = res.data().url;
-                // img.onload = () => height = img.height;
-
                 // each object contains image data.
                 document.push({...res.data(), id: res.id})
-                // console.log(height)
             })
             setOrderDocs(document)
         })
@@ -44,7 +38,6 @@ const useOrderFireStore = () => {
     }, [])
 
     return { orderDocs, orderIds };
-
 }
 
 export default useOrderFireStore;

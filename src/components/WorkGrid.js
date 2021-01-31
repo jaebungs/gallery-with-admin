@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import useOrderFireStore from '../hooks/useOrderFireStore';
 import Card from './Card';
 
