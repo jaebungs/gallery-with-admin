@@ -41,9 +41,9 @@ const HomePage = () => {
             <footer className="footer-container">
                 <p>© {year}, Common Goods Studio</p>
                 <div className="link-container">
-                    <a href="https://www.facebook.com/CommonGoods.Studio"><i className="fab fa-facebook-square media-icon"></i></a>
-                    <a href="https://www.instagram.com/commongoodsstudio/"><i className="fab fa-instagram-square media-icon"></i></a>
-                    <a href="https://www.youtube.com/channel/UCSOorftvUBrI1Ax9hzsmrxA"><i className="fab fa-youtube media-icon"></i></a>
+                    <a href="https://www.facebook.com/CommonGoods.Studio"><i className="fab fa-facebook-square media-icon facebook"></i></a>
+                    <a href="https://www.instagram.com/commongoodsstudio/"><i className="fab fa-instagram-square media-icon instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCSOorftvUBrI1Ax9hzsmrxA"><i className="fab fa-youtube media-icon youtube"></i></a>
                 </div>
                 <p className="cursor" onClick={()=>{setAdminModal(true)}}>Admin</p>
                 {

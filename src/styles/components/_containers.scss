@@ -7,7 +7,9 @@
     margin: $s-size 13rem;
     
     .company-title {
-        font-size: $l-size;
+        font-size: 2.5rem;
+        font-family:'El Messiri', sans-serif;
+        font-weight: 400;
     }
 
     .navigation-container {
@@ -59,9 +61,10 @@
 .cards-container{
     display: grid;
     grid-gap: 10px;
+    max-width: 1300px;
     grid-template-columns: repeat(auto-fill, max(290px));
     grid-auto-rows: 1px;
-    margin: $xl-size 14rem;
+    margin: $xl-size auto;
     justify-content: center;
 }
 
@@ -93,6 +96,19 @@
 
     .media-icon:hover{
         opacity: 0.6;
+    }
+    .facebook {
+        color: #4267B2;
+    }
+    .instagram {
+        color: transparent;
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+    .youtube {
+        color: #FF0000;
     }
 }
 
