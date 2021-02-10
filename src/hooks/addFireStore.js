@@ -9,14 +9,14 @@ const addFireStore = (imageData) => {
   let height;
   // Get original width and height of file.
   let img = new Image();
-  let fr = new FileReader();
+  let fileReader = new FileReader();
 
-  fr.onload = async function () {
-    if (fr !== null) {
-      img.src = fr.result;
+  fileReader.onload = async function () {
+    if (fileReader !== null) {
+      img.src = fileReader.result;
     }
   };
-  fr.readAsDataURL(imageData);
+  fileReader.readAsDataURL(imageData);
 
   img.onload = function () {
     width = img.width;

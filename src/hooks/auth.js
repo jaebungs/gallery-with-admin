@@ -7,10 +7,9 @@ export const startLogout = () => {
   auth
     .signOut()
     .then(() => {
-      console.log('logged out');
     })
     .catch((error) => {
-      console.log('log out error', error);
+      console.log('error', error)
     });
 };
 
@@ -27,9 +26,7 @@ export const AuthProvider = ({children}) => {
       if (user) {
         setIsLoggedIn(user);
         setLoading(false);
-        console.log('logged in auth');
       } else {
-        console.log('logged out');
         setIsLoggedIn(null);
       }
     });

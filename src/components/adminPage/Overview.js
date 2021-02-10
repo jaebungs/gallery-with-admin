@@ -7,8 +7,7 @@ const Overview = () => {
 
     const [imageDocs, setImageDocs] = useState([]);
     const [imageOrder, setImageOrder] = useState([]);
-    const [actionDone, setActionDone] = useState(false);
-
+    const [actionDone, setActionDone] = useState(false); // Controls fireStore order upload
 
     useEffect(()=>{
         let document = []
@@ -38,7 +37,6 @@ const Overview = () => {
             }
         })
         .catch((err)=>{console.log('failed to get ordered images',err)})
-
     }, [actionDone])
     
     return (
