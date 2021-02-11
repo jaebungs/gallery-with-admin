@@ -109,7 +109,7 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
   };
 
   return (
-    <div id="overview-page">
+    <div className="flex-column">
       <AdminSelectButtons
         tractChecked={tractChecked}
         setTrackChecked={setTrackChecked}

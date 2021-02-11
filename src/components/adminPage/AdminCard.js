@@ -46,7 +46,7 @@ const AdminCard = ({
     }
 
     return (
-        <div className="admin-card" >
+        <div className="admin-grid-container" >
             
             <label className="check-box">
                 {/* Checkbox was giving changing an uncontrolled input error due to undefined checked value */}
@@ -55,9 +55,7 @@ const AdminCard = ({
                 onChange={handleCheckboxOnChange}
             />
             </label>
-            <p className="text cursor"
-                onMouseEnter={()=>setIsDragable(true)}
-                onMouseLeave={()=>setIsDragable(false)}
+            <p className="text"
             >
                 {index + 1}
             </p>
@@ -67,11 +65,16 @@ const AdminCard = ({
                 className="admin-product-image cursor"
                 onMouseEnter={()=>setIsDragable(true)}
                 onMouseLeave={()=>setIsDragable(false)}
+                onTouchStart={()=>setIsDragable(true)}
+                onTouchEnd={()=>setIsDragable(false)}
+
             />
             <p 
                 className="text cursor"
                 onMouseEnter={()=>setIsDragable(true)}
                 onMouseLeave={()=>setIsDragable(false)}
+                onTouchStart={()=>setIsDragable(true)}
+                onTouchEnd={()=>setIsDragable(false)}
             >
                 {name}
             </p>

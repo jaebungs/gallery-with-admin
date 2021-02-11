@@ -66,8 +66,8 @@ const UploadForm = ({setActionDone, imageDocs, imageOrder, setImageDocs, setImag
   };
 
   return (
-    <form className="add-file-form">
-      <input type="file" onChange={(e)=>handleChange(e)} multiple />
+    <form className="upload-form-container">
+      <input className="add-file-input" type="file" onChange={(e)=>handleChange(e)} multiple />
 
       <div className="output">
         {error && <div className="fileError">{ error }</div>}

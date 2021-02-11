@@ -1,0 +1,15 @@
+.checkbox-select-btn {
+    border: $button-border;
+    margin: $xs-size;
+    padding: $xs-size;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.delete-btn{
+    border: $button-border;
+    background-color: $delete-btn;
+    color: #fff;
+    padding: $xs-size;
+}

@@ -8,7 +8,7 @@ const WorkGrid = ({ setSelectedImg }) => {
     
     return (
         <main className="main-container">
-            <div className="cards-container">
+            <div className="image-grid-container">
                 {orderDocs && orderDocs.map((doc, index) => {
                     return <Card key={index} setSelectedImg={setSelectedImg} {...doc} />
                     })

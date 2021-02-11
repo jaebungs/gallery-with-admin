@@ -1,8 +1,12 @@
 @import './base/settings';
 @import './base/base';
-@import 'components/card';
+
+@import './layout/flex';
+@import './layout/grid';
+
+@import 'components/adminCard';
 @import 'components/progress';
 @import 'components/modal';
-@import 'components/admin';
 @import 'components/containers';
-
+@import 'components/uploadForm';
+@import 'components/buttons';

@@ -40,7 +40,7 @@ const Overview = () => {
     }, [actionDone])
     
     return (
-        <div>
+        <div className="flex-column">
             <UploadForm
                 imageDocs={imageDocs}
                 imageOrder={imageOrder}
