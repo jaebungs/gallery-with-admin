@@ -13,7 +13,10 @@
     color: #fff;
     padding: $xs-size;
 }
-
+.anchor {
+    color: black;
+    text-decoration: none;
+}
 .top-arrow {
     position: sticky;
     font-size: $l-size;
