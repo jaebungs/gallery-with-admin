@@ -13,3 +13,16 @@
     color: #fff;
     padding: $xs-size;
 }
+
+.top-arrow {
+    position: sticky;
+    font-size: $l-size;
+    left: 96%;
+    bottom: 70px;
+    color: #000;
+}
+@media (max-width: 800px){
+    .top-arrow {
+        display: none;
+    }
+}

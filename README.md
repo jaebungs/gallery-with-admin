@@ -24,6 +24,7 @@ I just had to update state and make sure firebase is updated. => reduced code.
 session , local storage (Cross-Site-Scripting attack), cookies (but not very secure).  
 3. Align images while keeping ratio. Flex or grid?  
 Oh... it is actually hard! There are many different ways to achieve this.  
-Note: firefox has grid-template-rows: masonry; feature!
-
+Note: firefox has grid-template-rows: masonry; feature!  
+4. (Came back after 3 weeks) Drag and drop works on desktop but not in mobile! I wanted make without any library. Now I understand why ppl use a library for dnd...  
+5. OMG. No CSS structure. what did I even write!?. Learn BEM, SMACSS, OOCSS and use it!
 

@@ -3,8 +3,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: $m-size;
-    padding: $s-size $xl-size;
-    margin: $s-size 13rem;
+    margin: $s-size $xl-size;
     
     .company-title {
         font-size: 2.5rem;
@@ -28,7 +27,7 @@
 
 @media(max-width: 770px){
     .header-container {
-        display: block;
+        flex-direction: column;
         margin: 0 auto;
 
         h1{
@@ -116,10 +115,3 @@
     padding: 0 $xs-size;
 }
 
-.top-arrow {
-    position: sticky;
-    font-size: $l-size;
-    left: 96%;
-    bottom: 70px;
-    color: #000;
-}
