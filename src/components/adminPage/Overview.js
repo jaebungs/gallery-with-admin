@@ -44,6 +44,7 @@ const Overview = () => {
             <UploadForm
                 imageDocs={imageDocs}
                 imageOrder={imageOrder}
+                actionDone={actionDone}
 
                 setImageDocs={setImageDocs}
                 setImageOrder={setImageOrder}

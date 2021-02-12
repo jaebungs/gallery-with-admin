@@ -2,9 +2,16 @@ import React,{useState, useEffect} from 'react';
 import {fireStoreOrderRef} from '../../firebase/firebase';
 import addFireStore from '../../hooks/addFireStore';
 
-const UploadForm = ({setActionDone, imageDocs, imageOrder, setImageDocs, setImageOrder}) => {
+const UploadForm = ({actionDone, setActionDone, imageDocs, imageOrder, setImageDocs, setImageOrder}) => {
 
   const [error, setError] = useState(false);
+  const [uploading, setUploading] = useState(false);
+
+  const inputClicked = () => {
+    setActionDone(false);
+    setUploading(false);
+    setError(false);
+  }
 
   const handleChange = (e) => {
     e.stopPropagation();
@@ -18,16 +25,15 @@ const UploadForm = ({setActionDone, imageDocs, imageOrder, setImageDocs, setImag
     imageDocs.forEach((doc) => {
       storageImages.push(doc.name);
     });
-  
+    setUploading(true);
     for (const file in filesToUpload) {
       // Error handling. duplicate name and unacceptable file types.
       if (filesToUpload[file].type) { // I gotta fix why this forloop fires 3 times and last 2 are undefined..
         if (storageImages.includes(filesToUpload[file].name)){
-          setError('Duplicate file name. Please Change your file name.');
+          setError(`Duplicate file name. ${filesToUpload[file].name}. Please Change your file name.`);
         } 
         if (!allowedType.includes(filesToUpload[file].type)) {
-          setError('Unacceptable file type. Only svg, png, jpg and jpeg are allowed.');
-          
+          setError(`Unacceptable file type.  ${filesToUpload[file].name}. Only svg, png, jpg and jpeg are allowed.`);
         }
         if (
           !storageImages.includes(filesToUpload[file].name) &&
@@ -67,11 +73,13 @@ const UploadForm = ({setActionDone, imageDocs, imageOrder, setImageDocs, setImag
 
   return (
     <form className="upload-form-container">
-      <input className="add-file-input" type="file" onChange={(e)=>handleChange(e)} multiple />
+      <input className="add-file-input" type="file" onChange={(e)=>handleChange(e)} onClick={inputClicked} multiple />
 
       <div className="output">
-        {error && <div className="fileError">{ error }</div>}
-        {/* {files && <div className="fileSelected">{ files.name }</div>} */}
+        {error && <p className="fileError">{ error }</p>}
+        {(uploading && !actionDone) && <p>Uploading...</p>}
+        {(uploading && actionDone) && <p>Uploaded!</p>}
+
       </div>
     </form>
   );

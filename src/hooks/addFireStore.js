@@ -5,6 +5,7 @@ const addFireStore = (imageData) => {
   const id = reference.id;
   const name = imageData.name;
   const type = imageData.type;
+  let percentage;
   let width;
   let height;
   // Get original width and height of file.
@@ -29,7 +30,9 @@ const addFireStore = (imageData) => {
       .put(imageData)
       .on(
         'state_changed',
-        (snap) => {},
+        (snap) => {
+          percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+        },
         (err) => {
           console.log('Storage upload fail', err);
         },
@@ -38,7 +41,7 @@ const addFireStore = (imageData) => {
 
           reference.set({url, createdAt: timeStamp(), name, type, id, width, height});
 
-          resolve({url, id, name, type, createdAt: timeStamp(), width, height});
+          resolve({url, id, name, type, createdAt: timeStamp(), width, height, percentage});
         }
       );
   });
