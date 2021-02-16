@@ -1,0 +1,11 @@
+.card-container {
+    .card-image {
+        width: 280px;
+        max-height: 100%;
+        cursor: pointer;
+    }
+
+    .card-image:hover {
+        opacity: 0.7;
+    }
+}

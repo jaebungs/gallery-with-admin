@@ -6,7 +6,7 @@
   "scripts": {
     "server": "live-server public/",
     "build": "webpack",
-    "start": "webpack serve --mode development",
+    "start": "webpack serve --mode development localhost --port 9000 --open",
     "lint": "eslint"
   },
   "dependencies": {
