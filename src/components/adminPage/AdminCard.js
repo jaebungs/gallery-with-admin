@@ -48,9 +48,9 @@ const AdminCard = ({
     return (
         <div className="admin-grid-container" >
             
-            <label className="check-box">
+            <label className="checkbox-area">
                 {/* Checkbox was giving changing an uncontrolled input error due to undefined checked value */}
-                <input type="checkbox" value={name} 
+                <input type="checkbox" className="checkbox" value={name} 
                 checked={tractChecked[name] ? tractChecked[name].checked : false} 
                 onChange={handleCheckboxOnChange}
             />

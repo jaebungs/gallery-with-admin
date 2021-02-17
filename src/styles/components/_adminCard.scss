@@ -2,6 +2,10 @@
 .adminCard-drag-container {
     min-height: 100px;
     margin: 0 auto;
+    padding: 0 0.5rem;
+    &:hover {
+        background-color: rgba(0,0,0, 0.1);
+    }
 }
 
 .current-drag {
@@ -9,9 +13,19 @@
     margin: 0 auto;
 }
 
+.checkbox-area{
+    padding: 3rem 1.5rem;
+    cursor: pointer;
+}
+.checkbox{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
 .admin-product-image{
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
 }
 
 .text{
