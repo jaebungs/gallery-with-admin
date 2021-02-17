@@ -27,4 +27,4 @@ Oh... it is actually hard! There are many different ways to achieve this.
 Note: firefox has grid-template-rows: masonry; feature!  
 4. (Came back after 3 weeks) Drag and drop works on desktop but not in mobile! I wanted make without any library. Now I understand why ppl use a library for dnd...  
 5. OMG. No CSS structure. what did I even write!?. Learn BEM, SMACSS, OOCSS and use it!
-
+6. Lazy loading images. I should provide width and height with loading='lazy' attribute in `<img>`tag to prevent layout shift. But I didn't because all contents are images. Also, inital viewport images should not be lazy load.

@@ -24,7 +24,7 @@ const Card = ({setSelectedImg, index, url, id, height, width }) => {
 
     return (
         <div className='card-container' style={styleSpan} data-index={index} onClick={()=>setSelectedImg(url)}>
-            <img src={url} alt='product image' id={id} className={`card-image`}/>
+            <img src={url} alt='product image' loading='lazy' id={id} className={`card-image`}/>
         </div>
     )
 }

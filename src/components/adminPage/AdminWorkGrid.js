@@ -120,7 +120,7 @@ const AdminWorkGrid = ({imageOrder, imageDocs, setImageDocs, setImageOrder}) => 
           imageDocs.map((doc, index) => {
             return (
               <div
-                key={index}
+                key={doc.id}
                 draggable={isDragable ? 'true' : 'false'}
                 onDragStart={(e) => handleDragStart(e, index)}
                 onDragEnter={(e) => handleDragEnter(e, index)}

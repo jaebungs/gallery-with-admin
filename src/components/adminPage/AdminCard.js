@@ -62,6 +62,7 @@ const AdminCard = ({
             <img 
                 src={url} 
                 alt='product image' 
+                loading='lazy'
                 className="admin-product-image cursor"
                 onMouseEnter={()=>setIsDragable(true)}
                 onMouseLeave={()=>setIsDragable(false)}
