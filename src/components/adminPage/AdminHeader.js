@@ -22,7 +22,7 @@ const AdminHeader = () => {
                     exact
                     to='/'
                     activeClassName="is-active"
-                    className='anchor'
+                    className='admin-anchor'
                 >
                     Home
                 </NavLink>
@@ -30,7 +30,7 @@ const AdminHeader = () => {
                     exact
                     to='/admin'
                     activeClassName="is-active"
-                    className='anchor'
+                    className='admin-anchor'
                 >
                     Admin
                 </NavLink>
