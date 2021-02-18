@@ -39,12 +39,8 @@ const HomePage = () => {
                 scrollPosition > 200 && <i onClick={toTop} className="fas fa-arrow-circle-up top-arrow cursor"></i>
             }
             <footer className="footer-container">
-                <p>© {year}, Common Goods Studio</p>
-                <div className="link-container">
-                    <a href="https://www.facebook.com/CommonGoods.Studio"><i className="fab fa-facebook-square media-icon facebook"></i></a>
-                    <a href="https://www.instagram.com/commongoodsstudio/"><i className="fab fa-instagram-square media-icon instagram"></i></a>
-                    <a href="https://www.youtube.com/channel/UCSOorftvUBrI1Ax9hzsmrxA"><i className="fab fa-youtube media-icon youtube"></i></a>
-                </div>
+                <p>© {year}, Masonry Gallery</p>
+                
                 <p className="cursor" onClick={()=>{setAdminModal(true)}}>Admin</p>
                 {
                    adminModal && <LoginModal setAdminModal={setAdminModal} />

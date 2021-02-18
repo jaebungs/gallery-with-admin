@@ -5,7 +5,7 @@
     font-size: $m-size;
     max-width: 1143px;
     padding: 0 $l-size;
-    margin: $s-size auto;
+    margin: $m-size auto $s-size auto;
 
     .company-title {
         font-size: 2.5rem;
@@ -20,10 +20,12 @@
         align-items: center;
     }
 
-    .shop{
+    .nav-icon{
         color: black;
         text-decoration: none;
-        padding: $xs-size;
+        font-size: 1.7rem;
+        padding: 0 $xs-size;
+        margin: 0 $xs-size;
         &:hover{
             font-weight: bold;
         }
@@ -50,15 +52,12 @@
             flex-direction: column;
         }
 
-        .anchor{
-            float: right;
-            padding: $s-size;
-            margin: 0;
-        }
-
         .logout-button{
             display: block;
             margin: $s-size auto;
+        }
+        .nav-icon {
+            margin: 0;
         }
     }
 }
@@ -91,28 +90,6 @@
         font-size: $s-size;
     }
 
-    .media-icon{
-        color: #000;
-        font-size: $l-size;
-        padding: 0 $s-size;
-    }
-
-    .media-icon:hover{
-        opacity: 0.6;
-    }
-    .facebook {
-        color: #4267B2;
-    }
-    .instagram {
-        color: transparent;
-        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-        background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-        background-clip: text;
-        -webkit-background-clip: text;
-    }
-    .youtube {
-        color: #FF0000;
-    }
 }
 
 @media(max-width: 400px){

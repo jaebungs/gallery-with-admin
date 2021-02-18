@@ -17,7 +17,7 @@ const AdminHeader = () => {
     return(
         <header className="header-container">
             <div className="navigation-container">
-                <h1 className="company-title">Common Goods Studio</h1>
+                <h1 className="company-title">Masonry Gallery</h1>
                 <NavLink
                     exact
                     to='/'
