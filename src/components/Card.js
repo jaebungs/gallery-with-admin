@@ -15,6 +15,7 @@ const Card = ({setSelectedImg, index, url, id, height, width }) => {
         }else if (index % 2 === 0) {
             resize -= 3
         }
+        
         return resize;
     };
 
@@ -24,7 +25,7 @@ const Card = ({setSelectedImg, index, url, id, height, width }) => {
 
     return (
         <div className='card-container' style={styleSpan} data-index={index} onClick={()=>setSelectedImg(url)}>
-            <img src={url} alt='product image' loading='lazy' id={id} className={`card-image`}/>
+            <img src={url} alt='product image' loading='lazy' width="280" id={id} className={`card-image`}/>
         </div>
     )
 }

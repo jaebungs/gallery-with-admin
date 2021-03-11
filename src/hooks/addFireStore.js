@@ -31,6 +31,7 @@ const addFireStore = (imageData) => {
       .on(
         'state_changed',
         (snap) => {
+          // progress, but not used in this app
           percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
         },
         (err) => {
