@@ -1,4 +1,4 @@
-#Masonry Generator
+# Masonry Generator
 
 ## Introduction
 Upload images. Then, there will be a Masonry gallery website!  
@@ -21,7 +21,7 @@ Create a clean UI masonry gallery that can be managed easily.
 
 ## Problem encountered
 
-|Problems|Solution / Learning Outcome|
+| **Problems** | **Solution / Learning Outcome** |
 | :- | :- |
 |What tool to use storing images?|<p>Google drive came up in my head first, then Imgur and other storage websites. I could use those, however, it was not easy and user-friendly to save and retrieve images from free cloud services.</p><p>After long hours of research, trial and fail, I found Firebase!</p>|
 |Masonry… but with what and how?|<p>Should I use Grid? Or Flex? Set specific height on nth pictures? But each image should keep its ratio.</p><p>I decided to use the grid for practice and display it in left to right order while keeping each image’s ratio.</p><p>It was not as easy as I was expecting.</p><p>Actually, I struggled and I think I made it too complicated, but this is the solution I came up with at that time.</p><p></p><p>One grid div that has a maximum 4 column (280px) with 1px of many rows.</p><p>Calculate image width and height during upload and give appropriate span. This way we can keep its ratio.</p><p></p><p></p>|
